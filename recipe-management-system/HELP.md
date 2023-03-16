@@ -30,29 +30,29 @@
 
  ## b)status Controller:
   ###  create status: 
- @PostMapping("/create-status")
+       @PostMapping("/create-status")
     public ResponseEntity<String> createStatus(@RequestBody String statusData)
   
   
  ## b)Users Controller:
   ###  create user: 
- @PostMapping(value = "/create-user")
+       @PostMapping(value = "/create-user")
     public ResponseEntity<String> createUser(@RequestBody String userData)
   
   ###  get users by id: 
- @GetMapping(value = "/get-users")
+       @GetMapping(value = "/get-users")
     public ResponseEntity<String> getUsers(@Nullable @RequestParam String userId)
   
   ###  users login: 
-@PostMapping(value = "/login")
+      @PostMapping(value = "/login")
     public ResponseEntity<String> login(@RequestBody String requestData)
   
   ###  update user: 
-@PutMapping(value ="/update-user/{userId}")
+      @PutMapping(value ="/update-user/{userId}")
     public ResponseEntity<String> updateUser(@PathVariable String userId,@RequestBody String requestData)
   
   ###  delete user: 
- @DeleteMapping(value = "/delete-user/{userId}")
+      @DeleteMapping(value = "/delete-user/{userId}")
     public ResponseEntity<String> deleteUser(@PathVariable int userId)
 
  
@@ -61,16 +61,16 @@
  ### a) Recipe service:
  
  ### save recipe:
-  public int saveRecipe(Recipe recipe)
+       public int saveRecipe(Recipe recipe)
   
  ### update recipe:
-     public JSONObject updateRecipe(String recipeId, Recipe newRecipe)
+       public JSONObject updateRecipe(String recipeId, Recipe newRecipe)
  
 ### get recipe by id:
- public JSONObject getRecipeById(String recipeId) 
+       public JSONObject getRecipeById(String recipeId) 
   
  ### get recipe by name:
- public JSONObject getRecipeByName(String recipeName)
+       public JSONObject getRecipeByName(String recipeName)
   
  ### delete recipe:
  public void deleteRecipeById(int recipeId)
