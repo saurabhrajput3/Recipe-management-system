@@ -34,7 +34,7 @@
     public ResponseEntity<String> createStatus(@RequestBody String statusData)
   
   
- ## b)Users Controller:
+ ## c) Users Controller:
   ###  create user: 
        @PostMapping(value = "/create-user")
     public ResponseEntity<String> createUser(@RequestBody String userData)
@@ -73,32 +73,32 @@
        public JSONObject getRecipeByName(String recipeName)
   
  ### delete recipe:
- public void deleteRecipeById(int recipeId)
+      public void deleteRecipeById(int recipeId)
   
   
   ### b) status service:
   
   ### save status:
-  public int saveStatus(Status status)
-  
+       public int saveStatus(Status status)
+       
   
   ### c) users service:
   
   
 ### save user:
- public int saveUser(Users user) 
+       public int saveUser(Users user) 
   
  ### get user by id:
- public JSONArray getUsers(String userId) 
+       public JSONArray getUsers(String userId) 
   
   ### get login:
- public JSONObject login(String username, String password)
+       public JSONObject login(String username, String password)
   
  ### update user:
-  public JSONObject updateUser(Users newUser, String userId) 
+       public JSONObject updateUser(Users newUser, String userId) 
   
   ### delete user:
-  public void deleteUserByUserId(int userId)
+      public void deleteUserByUserId(int userId)
   
   
   
@@ -107,32 +107,32 @@
   ### a) recipe repo:
   
   ## get recipe by id
-   @Query(value = "select * from tbl_recipe where recipe_id=:recipeId ",nativeQuery = true)
+        @Query(value = "select * from tbl_recipe where recipe_id=:recipeId ",nativeQuery = true)
     public List<Recipe> getRecipeById(Integer recipeId);
 
   ## get recipe by name
-    @Query(value = "select * from tbl_recipe where recipe_name=:recipeName",nativeQuery = true)
+        @Query(value = "select * from tbl_recipe where recipe_name=:recipeName",nativeQuery = true)
     public Recipe getRecipeByName(String recipeName);
   
   
-   ### a) user repo:
+   ### b) user repo:
   
   ## find user by username
-  @Query(value="Select * from tbl_user where username=:username and status_id=1",nativeQuery = true)
+        @Query(value="Select * from tbl_user where username=:username and status_id=1",nativeQuery = true)
     public List<Users> findByUsername(String username);
   
   ## get user by id
-    @Query(value="Select * from tbl_user where user_id=:userId and status_id=1",nativeQuery = true)
+        @Query(value="Select * from tbl_user where user_id=:userId and status_id=1",nativeQuery = true)
     public List<Users> getUserByUserId(int userId);
 
   ## get all users
-    @Query(value="Select * from tbl_user where status_id=1",nativeQuery = true)
+        @Query(value="Select * from tbl_user where status_id=1",nativeQuery = true)
     public List<Users> getAllUsers();
   
   ## delete user (soft deleting)
-    @Modifying
-    @Transactional
-    @Query(value = "update tbl_user set status_id = 2 where user_id=:userId ",
+          @Modifying
+          @Transactional
+          @Query(value = "update tbl_user set status_id = 2 where user_id=:userId ",
             countQuery = "Select count(*) FROM tbl_user", nativeQuery = true)
     public void deleteUserByUserId(int userId);
   
