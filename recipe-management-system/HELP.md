@@ -16,15 +16,15 @@
     public ResponseEntity<String> updateRecipe(@PathVariable String recipeId, @RequestBody String recipeBody)
                              
 ### get recipe by id:  
- @GetMapping(value = "/get-recipe-id")
+       @GetMapping(value = "/get-recipe-id")
     public ResponseEntity<String> getRecipeById(@RequestParam String recipeId)
                   
 ### get recipe by name: 
- @GetMapping(value = "/get-recipe-name")
+       @GetMapping(value = "/get-recipe-name")
     public ResponseEntity<String> getRecipeByName(@RequestParam String recipeName)
                   
 ###  delete recipe by recipeId: 
- @DeleteMapping(value = "/delete-recipe/{recipeId}")
+       @DeleteMapping(value = "/delete-recipe/{recipeId}")
     public ResponseEntity<String> deleteRecipe(@PathVariable int recipeId)
 
 
