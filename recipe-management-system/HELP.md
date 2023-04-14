@@ -1,3 +1,5 @@
+# Recipe Catalog Application / Recipe Management System
+
 # Framework: SpringBoot
 # Language: Java
 # database: Mysql
